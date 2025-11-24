@@ -85,7 +85,7 @@ export default function GuessMap({
   }
 
   return (
-    <div className="relative">
+    <div className={`relative ${!disabled && !showResult ? "cursor-crosshair" : ""}`}>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={defaultCenter}
@@ -99,7 +99,6 @@ export default function GuessMap({
           mapTypeControl: true,
           fullscreenControl: true,
           clickableIcons: false,
-          cursor: disabled ? "default" : "crosshair",
         }}
       >
         {showResult && actualLocation && (
